@@ -1,0 +1,32 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'message.ui'
+#
+# Created by: PyQt5 UI code generator 5.12.2
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+
+class Ui_Message(object):
+    def setupUi(self, Message):
+        Message.setObjectName("Message")
+        Message.resize(350, 231)
+        self.textEdit = QtWidgets.QTextEdit(Message)
+        self.textEdit.setGeometry(QtCore.QRect(90, 50, 171, 121))
+        self.textEdit.setObjectName("textEdit")
+
+        self.retranslateUi(Message)
+        QtCore.QMetaObject.connectSlotsByName(Message)
+
+    def retranslateUi(self, Message):
+        _translate = QtCore.QCoreApplication.translate
+        Message.setWindowTitle(_translate("Message", "Dialog"))
+        self.textEdit.setHtml(_translate("Message", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\">输入SAPno错误，或该产品还没在数据库里，请在管理员界面加入该产品的信息</span></p></body></html>"))
+
+

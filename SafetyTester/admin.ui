@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>admin_form</class>
+ <widget class="QWidget" name="admin_form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1062</width>
+    <height>777</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QTreeWidget" name="treeWidget">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>160</y>
+     <width>1021</width>
+     <height>431</height>
+    </rect>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <attribute name="headerDefaultSectionSize">
+    <number>150</number>
+   </attribute>
+   <column>
+    <property name="text">
+     <string>Product</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Required Steps</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Operation Voltage(V)</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Operation dwell time(s)</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Operation current limit(mA)</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string/>
+    </property>
+   </column>
+  </widget>
+  <widget class="QPushButton" name="deleteBtn">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>90</y>
+     <width>101</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>删除</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="addBtn">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>90</y>
+     <width>101</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>添加产品</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="nextBtn">
+   <property name="geometry">
+    <rect>
+     <x>500</x>
+     <y>630</y>
+     <width>111</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>下一步</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="add_childBtn">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>90</y>
+     <width>101</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>添加订单号</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

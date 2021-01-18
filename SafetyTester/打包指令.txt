@@ -1,0 +1,2 @@
+chcp 65001
+C:\Users\BSCE-TE\Desktop\stuff\yjx_intern\GUI APP>pyinstaller -F -c AnGuiAPP.spec --specpath "C:\Users\BSCE-TE\AppData\Local\Programs\Python\Python37-32\Lib\site-packages\PyQt5\Qt\bin";"C:\Users\BSCE-TE\AppData\Local\Programs\Python\Python37-32\Lib\site-packages\serial"
