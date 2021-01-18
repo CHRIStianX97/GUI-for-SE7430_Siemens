@@ -76,14 +76,14 @@ def ACW_test(voltage, uplimit, downlimit,testtime,channel,ser):
     ser.write(dw_cmd.encode())
     time.sleep(0.2)
 
-    dw_cmd = "ERU "+"2\n"
+    dw_cmd = "ERU "+"0.1\n"
     ser.write(dw_cmd.encode())
 
     dw_cmd = "EDW " + str(testtime)+"\n"
     ser.write(dw_cmd.encode())
     time.sleep(0.2)
 
-    dw_cmd = "ERD " + "2\n"
+    dw_cmd = "ERD " + "0\n"
     ser.write(dw_cmd.encode())
     time.sleep(0.2)
 
