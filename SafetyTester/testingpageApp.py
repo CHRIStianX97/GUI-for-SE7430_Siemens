@@ -84,12 +84,12 @@ class testingpageApp(QMainWindow, Ui_MainWindow):
         single_step(ser)
         ACW_test(100,10,0,2,'OOOO',ser)
         ehi_cmd = "TEST\n"
-        time.sleep(1)
         ret_val = ser.write(ehi_cmd.encode())
+        time.sleep(0.1)
         if not ret_val:
             raise ValueError("EHI transimission failed")
         try:
-            result = get_test_result(ser, dw_time=float(1))
+            result = get_test_result(ser, dw_time=float(2))
             return True
         except:
             return False
@@ -229,9 +229,10 @@ class testingpageApp(QMainWindow, Ui_MainWindow):
             ACW_test(step[0], step[1],step[2],step[3],step[4],ser)
             ehi_cmd = "TEST\n"
             ret_val = ser.write(ehi_cmd.encode())
+            time.sleep(0.1)
             if not ret_val:
                 raise ValueError("EHI transimission failed")
-            result = get_test_result(ser, dw_time=float(step[2]))
+            result = get_test_result(ser, dw_time=float(step[2] + 0.2))
             result_list.append(result)
             step_list.append(steps)
             result_list.append(";")
