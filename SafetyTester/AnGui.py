@@ -55,6 +55,46 @@ def port_open(portx, bbr = 9600, time = None):
 ##        return True
 ##    return False
 
+#check the connection and function 
+def ACW_check(voltage, uplimit, downlimit,testtime,channel,ser):
+
+    ser.write("FN 1,TempTest\n".encode())
+    #command transition needs time
+    time.sleep(0.1)
+
+    ret_val = ser.write("SAA\n".encode())
+    time.sleep(0.1)
+
+    if not ret_val:
+        raise ValueError("SAA transimission failed")
+
+    dw_cmd = "EV " + str(voltage)+"\n"
+    ser.write(dw_cmd.encode())
+    time.sleep(0.1)
+
+    dw_cmd = "EHT " + str(uplimit)+"\n"
+    ser.write(dw_cmd.encode())
+    time.sleep(0.1)
+
+    dw_cmd = "ELT " + str(downlimit)+"\n"
+    ser.write(dw_cmd.encode())
+    time.sleep(0.1)
+
+    dw_cmd = "ERU "+"0.1\n"
+    ser.write(dw_cmd.encode())
+    time.sleep(0.1)
+
+    dw_cmd = "EDW " + str(testtime)+"\n"
+    ser.write(dw_cmd.encode())
+    time.sleep(0.1)
+
+    dw_cmd = "ERD " + "0\n"
+    ser.write(dw_cmd.encode())
+    time.sleep(0.1)
+
+    dw_cmd = "ES " + str(channel) + "OOOOOOOO\n"
+    ser.write(dw_cmd.encode())
+    time.sleep(0.1)
 
 #specified the test data
 def ACW_test(voltage, uplimit, downlimit,testtime,channel,ser):
@@ -99,7 +139,7 @@ def ACW_test(voltage, uplimit, downlimit,testtime,channel,ser):
 
 def get_test_result(ser,dw_time):
 
-    time.sleep(dw_time)
+    time.sleep(dw_time + 0.1)
     search_cmd = "TD?\n"
     ret_val = ser.write(search_cmd.encode())
     time.sleep(0.1)
