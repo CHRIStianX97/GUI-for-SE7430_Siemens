@@ -232,7 +232,7 @@ class testingpageApp(QMainWindow, Ui_MainWindow):
             time.sleep(0.1)
             if not ret_val:
                 raise ValueError("EHI transimission failed")
-            result = get_test_result(ser, dw_time=float(step[2] + 0.2))
+            result = get_test_result(ser, dw_time=float(step[2] + 2 + 2 + 0.1))
             result_list.append(result)
             step_list.append(steps)
             result_list.append(";")
