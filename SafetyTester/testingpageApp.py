@@ -82,14 +82,14 @@ class testingpageApp(QMainWindow, Ui_MainWindow):
         #if not flag:
             #raise ValueError("建立Testcase失败")
         single_step(ser)
-        ACW_test(100,10,0,2,'OOOO',ser)
+        ACW_check(100,10,0,1,'OOOO',ser)
         ehi_cmd = "TEST\n"
         ret_val = ser.write(ehi_cmd.encode())
         time.sleep(0.1)
         if not ret_val:
             raise ValueError("EHI transimission failed")
         try:
-            result = get_test_result(ser, dw_time=float(2))
+            result = get_test_result(ser, dw_time=float(1))
             return True
         except:
             return False
@@ -232,7 +232,7 @@ class testingpageApp(QMainWindow, Ui_MainWindow):
             time.sleep(0.1)
             if not ret_val:
                 raise ValueError("EHI transimission failed")
-            result = get_test_result(ser, dw_time=float(step[2] + 2 + 2 + 0.1))
+            result = get_test_result(ser, dw_time=float(step[2] + 2 + 2)) #The true time is test time + ERU + ERD
             result_list.append(result)
             step_list.append(steps)
             result_list.append(";")
