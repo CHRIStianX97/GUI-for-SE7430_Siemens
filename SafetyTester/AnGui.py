@@ -139,9 +139,9 @@ def ACW_test(voltage, uplimit, downlimit,testtime,channel,ser):
 
 def get_test_result(ser,dw_time):
 
-    time.sleep(dw_time + 0.1)
+    #time.sleep(dw_time + 0.1)
     search_cmd = "TD?\n"
-    ret_val = ser.write(search_cmd.encode())
+    ser.write(search_cmd.encode())
     time.sleep(0.1)
     str = ""
     index = 0
@@ -173,30 +173,30 @@ def single_step(ser):
     return
 
 #determine the communication status
-def check_status(ser):
-    index = 0
-    str = None
-    ret_val = ser.write("*TST?\n".encode())
-    time.sleep(0.1)
-    if not ret_val:
-        raise ValueError("SAA transimission failed")
-    while True:
-        index += 1
-        if ser.in_waiting and index <= 200:
-            time.sleep(2)
-            str = ser.read(ser.in_waiting).decode()
-            if (str == "exit"):
-                break
-            else:
-                print("data:", str)
-                if str:
-                    return True
-            index += 1
-        else:
-            break
-
-
-    return False
+# def check_status(ser):
+#     index = 0
+#     str = None
+#     ret_val = ser.write("*TST?\n".encode())
+#     time.sleep(0.1)
+#     if not ret_val:
+#         raise ValueError("SAA transimission failed")
+#     while True:
+#         index += 1
+#         if ser.in_waiting and index <= 200:
+#             time.sleep(2)
+#             str = ser.read(ser.in_waiting).decode()
+#             if (str == "exit"):
+#                 break
+#             else:
+#                 print("data:", str)
+#                 if str:
+#                     return True
+#             index += 1
+#         else:
+#             break
+#
+#
+#     return False
 
 ##if __name__ == "__main__":
 ##    #test example

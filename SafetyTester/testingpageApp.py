@@ -230,8 +230,9 @@ class testingpageApp(QMainWindow, Ui_MainWindow):
             ehi_cmd = "TEST\n"
             ret_val = ser.write(ehi_cmd.encode())
             time.sleep(0.1)
+            time.sleep(step[2] + 2 + 2) #The true time is test time + ERU + ERD
             if not ret_val:
-                raise ValueError("EHI transimission failed")
+                raise ValueError("EHI transmission failed")
             result = get_test_result(ser, dw_time=float(step[2] + 2 + 2)) #The true time is test time + ERU + ERD
             result_list.append(result)
             step_list.append(steps)
